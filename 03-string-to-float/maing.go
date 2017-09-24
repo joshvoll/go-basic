@@ -35,9 +35,9 @@ func main() {
 
 	// print the values to the screen
 	fmt.Println("Total Records : ", len(rows) - 1)
-	fmt.Println("Mean Air Temp\t", mean(rows, 1), median(rows, 1))
-	fmt.Println("Mean Barometric\t", mean(rows, 2), median(rows, 2))
-	fmt.Println("Mean Win Speed\t", mean(rows, 7), median(rows, 7))
+	fmt.Println("Mean Air Temp\t", "Mean", mean(rows, 1), "Median", median(rows, 1))
+	fmt.Println("Mean Barometric\t", "Mean", mean(rows, 2), "Median", median(rows, 2))
+	fmt.Println("Mean Win Speed\t", "Mean", mean(rows, 7), "Median", median(rows, 7))
 
 
 }
@@ -73,38 +73,23 @@ func median(rows [][]string, idx int) float64 {
 		}
 	}
 
-	// before sorted the float64; the first 10 records
-	fmt.Println("BEFORE SORTING")
-
-	// loop to check the sorting using sorted variable
-	for i, v := range sorted {
-		fmt.Println(v)
-
-		if i == 9 {
-			break
-		}
-	}
-
-	// using teh go method to sort 
+	// sort the values
 	sort.Float64s(sorted)
 
-	// after sorting
-	fmt.Println("AFTER SORTNG")
-
-	for i, v := range sorted {
-		fmt.Println(v)
-
-		if i == 9 {
-			break
-		}
+	// finding the median
+	if len(sorted) % 2 == 0 {
+		// even number of items, for example: 3,5,8,9. median are: (5+8) / 2 = 6.5
+		middle := len(sorted) / 2
+		higher := sorted[middle]
+		lower := sorted[middle]
+		return (higher + lower) / 2
 	}
 
-	return 0.0
+	// return the median 
+	middle := len(sorted) / 2
+	return sorted[middle]
 
 }
-
-
-
 
 
 
