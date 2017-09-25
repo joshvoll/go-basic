@@ -28,7 +28,7 @@ func main() {
 	rdr.Comma = '\t'
 	fmt.Println(rdr.TrimLeadingSpace)
 	rdr.TrimLeadingSpace = true
-	fmt.Println(rdr.TrimLeadingSpace)
+	fmt.Println(rdr.TrimLeading)
 
 	rows, err := rdr.ReadAll()
 
