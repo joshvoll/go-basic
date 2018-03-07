@@ -1,0 +1,269 @@
+
+		<html>
+			<head>
+			<script src="http://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+			<script src="https://code.highcharts.com/highcharts.js"></script>
+			<script src="https://code.highcharts.com/modules/series-label.js"></script>
+			<script src="https://code.highcharts.com/modules/exporting.js"></script>
+			</head>
+			<body>
+				<div id="container"></div>
+				<table>
+					<tr>
+						<th>Open</th>
+						<th>High</th>
+						<th>Low</th>
+						<th>Close</th>
+					</tr>	
+
+				<tr>
+					<td>176.15</td>
+					<td>179.25</td>
+				    <td>175.07</td>
+					<td>179.10</td>
+				</tr>
+			
+
+				<tr>
+					<td>179.37</td>
+					<td>180.10</td>
+				    <td>178.25</td>
+					<td>179.26</td>
+				</tr>
+			
+
+				<tr>
+					<td>178.61</td>
+					<td>179.58</td>
+				    <td>177.41</td>
+					<td>178.46</td>
+				</tr>
+			
+
+				<tr>
+					<td>177.30</td>
+					<td>177.78</td>
+				    <td>176.60</td>
+					<td>177.00</td>
+				</tr>
+			
+
+				<tr>
+					<td>177.30</td>
+					<td>179.44</td>
+				    <td>176.82</td>
+					<td>177.04</td>
+				</tr>
+			
+
+				<tr>
+					<td>177.25</td>
+					<td>177.30</td>
+				    <td>173.20</td>
+					<td>174.22</td>
+				</tr>
+			
+
+				<tr>
+					<td>174.51</td>
+					<td>174.95</td>
+				    <td>170.53</td>
+					<td>171.11</td>
+				</tr>
+			
+
+				<tr>
+					<td>172.00</td>
+					<td>172.00</td>
+				    <td>170.06</td>
+					<td>171.51</td>
+				</tr>
+			
+
+				<tr>
+					<td>170.16</td>
+					<td>170.16</td>
+				    <td>167.07</td>
+					<td>167.96</td>
+				</tr>
+			
+
+				<tr>
+					<td>165.53</td>
+					<td>167.37</td>
+				    <td>164.70</td>
+					<td>166.97</td>
+				</tr>
+			
+
+				<tr>
+					<td>166.87</td>
+					<td>168.44</td>
+				    <td>166.50</td>
+					<td>167.43</td>
+				</tr>
+			
+
+				<tr>
+					<td>167.17</td>
+					<td>168.62</td>
+				    <td>166.76</td>
+					<td>167.78</td>
+				</tr>
+			
+
+				<tr>
+					<td>166.00</td>
+					<td>166.80</td>
+				    <td>160.10</td>
+					<td>160.50</td>
+				</tr>
+			
+
+				<tr>
+					<td>159.10</td>
+					<td>163.88</td>
+				    <td>156.00</td>
+					<td>156.49</td>
+				</tr>
+			
+
+				<tr>
+					<td>154.83</td>
+					<td>163.72</td>
+				    <td>154.00</td>
+					<td>163.03</td>
+				</tr>
+			
+
+				<tr>
+					<td>163.09</td>
+					<td>163.40</td>
+				    <td>159.07</td>
+					<td>159.54</td>
+				</tr>
+			
+
+				<tr>
+					<td>160.29</td>
+					<td>161.00</td>
+				    <td>155.03</td>
+					<td>155.15</td>
+				</tr>
+			
+
+				<tr>
+					<td>157.07</td>
+					<td>157.89</td>
+				    <td>150.24</td>
+					<td>156.41</td>
+				</tr>
+			
+
+				<tr>
+					<td>158.50</td>
+					<td>163.89</td>
+				    <td>157.51</td>
+					<td>162.71</td>
+				</tr>
+			
+
+				<tr>
+					<td>161.95</td>
+					<td>164.75</td>
+				    <td>161.65</td>
+					<td>164.34</td>
+				</tr>
+			
+
+				<tr>
+					<td>163.04</td>
+					<td>167.54</td>
+				    <td>162.88</td>
+					<td>167.37</td>
+				</tr>
+			
+
+				<tr>
+					<td>169.79</td>
+					<td>173.09</td>
+				    <td>169.00</td>
+					<td>172.99</td>
+				</tr>
+			
+
+				<tr>
+					<td>172.36</td>
+					<td>174.82</td>
+				    <td>171.77</td>
+					<td>172.43</td>
+				</tr>
+			
+
+			</table>
+		</body>
+		<script>
+			Highcharts.chart('container', {
+
+				title: {
+					text: 'apple inc share values, 2017-2018'
+				},
+			
+				subtitle: {
+					text: 'Source: https://finance.yahoo.com/quote/AAPL/history?ltr=1'
+				},
+			
+				yAxis: {
+					title: {
+						text: 'time'
+					}
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'middle'
+				},
+			
+				plotOptions: {
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2010
+					}
+				},
+			
+				series: [{
+					name: 'Open',
+					data: [176.15,179.37,178.61,177.30,177.30,177.25,174.51,172.00,170.16,165.53,166.87,167.17,166.00,159.10,154.83,163.09,160.29,157.07,158.50,161.95,163.04,169.79,172.36]
+				}, {
+					name: 'High',
+					data: [179.25,180.10,179.58,177.78,179.44,177.30,174.95,172.00,170.16,167.37,168.44,168.62,166.80,163.88,163.72,163.40,161.00,157.89,163.89,164.75,167.54,173.09,174.82]
+				}, {
+					name: 'Low',
+					data: [175.07,178.25,177.41,176.60,176.82,173.20,170.53,170.06,167.07,164.70,166.50,166.76,160.10,156.00,154.00,159.07,155.03,150.24,157.51,161.65,162.88,169.00,171.77]
+				}, {
+					name: 'Close',
+					data: [179.10,179.26,178.46,177.00,177.04,174.22,171.11,171.51,167.96,166.97,167.43,167.78,160.50,156.49,163.03,159.54,155.15,156.41,162.71,164.34,167.37,172.99,172.43]
+				}],
+			
+				responsive: {
+					rules: [{
+						condition: {
+							maxWidth: 500
+						},
+						chartOptions: {
+							legend: {
+								layout: 'horizontal',
+								align: 'center',
+								verticalAlign: 'bottom'
+							}
+						}
+					}]
+				}
+			
+			});
+		</script>
+	</html>	
+
+	

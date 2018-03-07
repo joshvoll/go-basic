@@ -1,14 +1,12 @@
 /* changin the delimiler to read the file on better way */
 
-package main  
-
+package main
 
 import (
+	"encoding/csv"
 	"fmt"
 	"os"
-	"encoding/csv"
 )
-
 
 func main() {
 
@@ -23,18 +21,18 @@ func main() {
 
 	// read the files
 	rdr := csv.NewReader(f)
-	
+
 	// create the delimieter here
 	rdr.Comma = '\t'
 	fmt.Println(rdr.TrimLeadingSpace)
 	rdr.TrimLeadingSpace = true
-	fmt.Println(rdr.TrimLeading)
+	fmt.Println(rdr.TrimLeadingSpace)
 
 	rows, err := rdr.ReadAll()
 
 	if err != nil {
 		panic(err)
-	} 
+	}
 
 	// loop throu the file
 	for i, row := range rows {
